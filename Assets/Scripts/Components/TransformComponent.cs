@@ -9,6 +9,7 @@ using UnityEngine;
       public float Speed;
       public float2 Direction;
       public float RotationSpeed; 
-      public bool SwitchDirection; 
+      public bool SwitchDirectionX;
+      public bool SwitchDirectionY; 
    }
 

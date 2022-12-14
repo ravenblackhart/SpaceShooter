@@ -33,17 +33,17 @@ public partial class EnemyMovement : SystemBase
             {
                 translation.Value.y += transformComponent.Speed * transformComponent.Direction.y * DeltaTime;
 
-                if (transformComponent.SwitchDirection)
+                if (transformComponent.SwitchDirectionX)
                 {
                     translation.Value.x -= transformComponent.Speed * transformComponent.Direction.x * DeltaTime;
                 }
-                else if (!transformComponent.SwitchDirection)
+                else if (!transformComponent.SwitchDirectionX)
                 {
                     translation.Value.x += transformComponent.Speed * transformComponent.Direction.x * DeltaTime;
                 }
                     
-                if (translation.Value.x >= rightBorder && !transformComponent.SwitchDirection) transformComponent.SwitchDirection = true; 
-                else if (translation.Value.x <= leftBorder && transformComponent.SwitchDirection) transformComponent.SwitchDirection = false; 
+                if (translation.Value.x >= rightBorder && !transformComponent.SwitchDirectionX) transformComponent.SwitchDirectionX = true; 
+                else if (translation.Value.x <= leftBorder && transformComponent.SwitchDirectionX) transformComponent.SwitchDirectionX = false; 
                 
 
             }).ScheduleParallel();

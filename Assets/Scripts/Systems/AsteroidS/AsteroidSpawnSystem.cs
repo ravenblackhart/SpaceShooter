@@ -46,7 +46,7 @@ public partial class AsteroidSpawnSystem : SystemBase
         Job
             .WithCode(() =>
             {
-                for (int i = count; i < settings.AsteroidSpawnRate; i++)
+                for (int i = count; i < settings.AsteroidDensity; i++)
                 {
                     var padding = 1f; 
                     var xPosition = rand.NextFloat(-1f*((settings.FieldWidth)/2 -padding), (settings.FieldWidth)/2 - padding);
@@ -67,10 +67,9 @@ public partial class AsteroidSpawnSystem : SystemBase
                     commandBuffer.SetComponent(e, transform);
                     
                 }
-                
-                 
 
             }).Schedule(); 
+        
         m_BeginSimECB.AddJobHandleForProducer(Dependency);
     }
 }

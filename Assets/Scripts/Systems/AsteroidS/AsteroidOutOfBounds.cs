@@ -6,6 +6,8 @@ using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
 
+[UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
+[UpdateBefore(typeof(EndFixedStepSimulationEntityCommandBufferSystem))] 
 public partial class AsteroidOutOfBounds : SystemBase
 {
     private EndFixedStepSimulationEntityCommandBufferSystem m_EndFixedStepSimECB;
