@@ -7,6 +7,6 @@ using Unity.Mathematics;
    {
       public float Speed;
       public float2 Direction;
-
+      public bool SwitchDirection; 
    }
 

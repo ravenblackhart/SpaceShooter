@@ -27,21 +27,21 @@ public partial class EnemyMovement : SystemBase
 
         Entities
             .WithAll<EnemyTag>()
-            .ForEach((ref Translation translation,  ref SwitchDir switchDir, in TransformComponent transformComponent) =>
+            .ForEach((ref Translation translation, ref TransformComponent transformComponent) =>
             {
-                //translation.Value.y += transformComponent.Speed * transformComponent.Direction.y * DeltaTIme;
+                translation.Value.y += transformComponent.Speed * transformComponent.Direction.y * DeltaTIme;
 
-                if (switchDir.SwitchDirection.boolValue == 1)
+                if (transformComponent.SwitchDirection)
                 {
                     translation.Value.x -= transformComponent.Speed * transformComponent.Direction.x * DeltaTIme;
                 }
-                else if (switchDir.SwitchDirection.boolValue == 0)
+                else if (!transformComponent.SwitchDirection)
                 {
                     translation.Value.x += transformComponent.Speed * transformComponent.Direction.x * DeltaTIme;
                 }
                     
-                if (translation.Value.x >= rightBorder && switchDir.SwitchDirection.boolValue == 0) switchDir.SwitchDirection = true; 
-                else if (translation.Value.x <= leftBorder && switchDir.SwitchDirection.boolValue == 1) switchDir.SwitchDirection = false; 
+                if (translation.Value.x >= rightBorder && !transformComponent.SwitchDirection) transformComponent.SwitchDirection = true; 
+                else if (translation.Value.x <= leftBorder && transformComponent.SwitchDirection) transformComponent.SwitchDirection = false; 
                 
 
             }).ScheduleParallel();
