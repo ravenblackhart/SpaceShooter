@@ -148,10 +148,9 @@ MonoBehaviour:
   Direction:
     x: 1
     y: 0
-  Rotation:
-    x: 0
-    y: 0
-  SwitchDirection: 0
+  RotationSpeed: 0
+  SwitchDirectionX: 0
+  SwitchDirectionY: 0
 --- !u!114 &7589712495141874792
 MonoBehaviour:
   m_ObjectHideFlags: 0
