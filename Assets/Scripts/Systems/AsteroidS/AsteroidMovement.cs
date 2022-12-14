@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -7,33 +8,31 @@ using Unity.Transforms;
 
 public partial class AsteroidMovement : SystemBase
 {
-    private GameSettingsComponent _settings;
+    private EntityQuery m_GameSettingsQuery;
 
     protected override void OnCreate()
     {
         base.OnCreate();
 
-        _settings = GetSingleton<GameSettingsComponent>(); 
+        m_GameSettingsQuery = GetEntityQuery(ComponentType.ReadWrite<GameSettingsComponent>());
+        
+        RequireForUpdate(m_GameSettingsQuery);
     }
 
     protected override void OnUpdate()
     {
+        var _settings = GetSingleton<GameSettingsComponent>(); 
+        
         float DeltaTime = Time.DeltaTime;
-
-        float bottomBorder = -(_settings.FieldHeight / 2); 
+        var rand = new Unity.Mathematics.Random((uint)Stopwatch.GetTimestamp());
+        
         
         Entities
             .WithAll<AsteroidTag>()
             .ForEach((ref Translation translation, ref Rotation rotation, in TransformComponent transformComponent) =>
             {
-                translation.Value.y -= transformComponent.Speed * transformComponent.Direction.y * DeltaTime;
-
-
-                if (translation.Value.y <= bottomBorder + 1f)
-                {
-                    //Remove Movement System & Destroy Object 
-                }
-                
+                translation.Value.xy += transformComponent.Speed * transformComponent.Direction.xy * DeltaTime;
+                rotation.Value = math.mul(rotation.Value, quaternion.RotateZ(math.radians(transformComponent.RotationSpeed * DeltaTime)));
             }).ScheduleParallel();
     }
 }

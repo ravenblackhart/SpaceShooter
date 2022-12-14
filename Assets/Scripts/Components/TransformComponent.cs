@@ -1,13 +1,14 @@
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine;
 
 
-   [GenerateAuthoringComponent]
+[GenerateAuthoringComponent]
    public struct TransformComponent : IComponentData
    {
       public float Speed;
       public float2 Direction;
-      public float2 Rotation; 
+      public float RotationSpeed; 
       public bool SwitchDirection; 
    }
 

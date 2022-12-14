@@ -2,6 +2,7 @@ using System;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Transforms;
 using UnityEngine;
 
 [GenerateAuthoringComponent]
@@ -18,8 +19,10 @@ public struct GameSettingsComponent : IComponentData
     
     [Header("Asteroids Properties")] 
     public int AsteroidSpawnRate;
-    
-    
+    public int AsteroidSpeed;
+    public int AsteroidRotation; 
+
+
 
 
 

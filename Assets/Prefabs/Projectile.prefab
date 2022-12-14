@@ -114,7 +114,5 @@ MonoBehaviour:
   Direction:
     x: 0
     y: 0
-  Rotation:
-    x: 0
-    y: 0
+  RotationSpeed: 0
   SwitchDirection: 0
