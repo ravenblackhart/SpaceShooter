@@ -486,8 +486,12 @@ MonoBehaviour:
   PlayerForce: 0
   PlayerSpeed: 0
   PlayerDirection: 0
-  AsteroidSpawnRate: 3
+  AsteroidDensity: 3
+  AsteroidSpawnTimer: 0
   AsteroidSpeed: 1
+  AsteroidRotation: 5
+  EnemySpawnDensity: 5
+  EnemySpeed: 3
 --- !u!4 &509486264
 Transform:
   m_ObjectHideFlags: 0

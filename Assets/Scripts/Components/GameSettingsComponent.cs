@@ -24,6 +24,8 @@ public struct GameSettingsComponent : IComponentData
     public int AsteroidRotation;
 
     [Header("Enemy Properties")] 
+    public int EnemySpawnDensity; 
     public int EnemySpeed;
+    
 
 }
