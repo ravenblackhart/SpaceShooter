@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4567645970960253202}
   - component: {fileID: 1981080284546913755}
+  - component: {fileID: 6471483135284481766}
+  - component: {fileID: 5045268102006691017}
+  - component: {fileID: 1247011137069195291}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -73,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.003648994, g: 0.336789, b: 0.7735849, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b9b813e4e93661b4f81f0b9b6d77b479, type: 3}
+  m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,3 +87,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6471483135284481766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7994562932691220481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90160abf425b7b64ba6b7c6e2c66d89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5045268102006691017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7994562932691220481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272d45f14978c7c4a89af849be3e5afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  Direction:
+    x: 0
+    y: 1
+  Rotation:
+    x: 1
+    y: 0
+  SwitchDirection: 0
+--- !u!114 &1247011137069195291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7994562932691220481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7d7495833204790ba1d3a8755397f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConversionMode: 0

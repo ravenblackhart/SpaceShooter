@@ -1,10 +1,15 @@
 using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
+using UnityEngine;
 
 
-    [GenerateAuthoringComponent]
+[GenerateAuthoringComponent]
     public struct FieldBounds : IComponentData
     {
-        public int Width;
-        public int Height;
+        public float BorderLeft;
+        public float BorderRight;
+        public float BorderTop;
+        public float BorderBottom;
     }
 

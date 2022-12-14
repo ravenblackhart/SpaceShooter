@@ -10,34 +10,36 @@ using UnityEngine;
 public partial class EnemyMovement : SystemBase
 {
 
-    private FieldBounds _fieldBounds; 
+    private GameSettingsComponent _settings; 
     protected override void OnStartRunning()
     {
         base.OnStartRunning();
 
-        
-        //_fieldBounds = Get
+
+       _settings = GetSingleton<GameSettingsComponent>();
     }
 
     protected override void OnUpdate()
     {
-        float DeltaTIme = Time.DeltaTime;
-        int leftBorder = -4;
-        int rightBorder = 4;
+        float DeltaTime = Time.DeltaTime;
+
+        float leftBorder = -(_settings.FieldWidth / 2); 
+        float rightBorder = _settings.FieldWidth / 2;
+
 
         Entities
             .WithAll<EnemyTag>()
             .ForEach((ref Translation translation, ref TransformComponent transformComponent) =>
             {
-                translation.Value.y += transformComponent.Speed * transformComponent.Direction.y * DeltaTIme;
+                translation.Value.y += transformComponent.Speed * transformComponent.Direction.y * DeltaTime;
 
                 if (transformComponent.SwitchDirection)
                 {
-                    translation.Value.x -= transformComponent.Speed * transformComponent.Direction.x * DeltaTIme;
+                    translation.Value.x -= transformComponent.Speed * transformComponent.Direction.x * DeltaTime;
                 }
                 else if (!transformComponent.SwitchDirection)
                 {
-                    translation.Value.x += transformComponent.Speed * transformComponent.Direction.x * DeltaTIme;
+                    translation.Value.x += transformComponent.Speed * transformComponent.Direction.x * DeltaTime;
                 }
                     
                 if (translation.Value.x >= rightBorder && !transformComponent.SwitchDirection) transformComponent.SwitchDirection = true; 
