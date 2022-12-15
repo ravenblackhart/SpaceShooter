@@ -440,8 +440,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423689348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -450,7 +450,7 @@ Transform:
   - {fileID: 1819552452}
   - {fileID: 407363061}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509486262
 GameObject:
@@ -483,17 +483,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FieldWidth: 34
   FieldHeight: 24
-  PlayerForce: 0
   PlayerSpeed: 5
-  PlayerDirection: 0
+  PlayerHealth: 20
   AsteroidDensity: 3
   AsteroidSpawnTimer: 0
   AsteroidSpeed: 1
   AsteroidRotation: 5
+  AsteroidHealth: 10
   EnemySpawnDensity: 5
   EnemySpeed: 3
+  EnemyHealth: 3
   ProjectileSpeed: 8
-  ProjectilesPerSecond: 10
+  ProjectilesPerSecond: 5
 --- !u!4 &509486264
 Transform:
   m_ObjectHideFlags: 0
@@ -507,7 +508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1819552450
 GameObject:
@@ -648,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829665616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69.469154, y: -594.6865, z: -20.218287}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

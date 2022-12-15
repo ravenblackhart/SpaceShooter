@@ -27,10 +27,10 @@ public partial class EnemyMovement : SystemBase
         float DeltaTime = Time.DeltaTime;
 
         float padding = 0.5f; 
-        float leftBorder = -(_settings.FieldWidth / 2); 
-        float rightBorder = _settings.FieldWidth / 2;
-        float topBorder = _settings.FieldHeight / 2;
-        float bottomBorder = -(_settings.FieldHeight / 2);
+        float leftBorder = -(_settings.FieldWidth / 2 - padding); 
+        float rightBorder = _settings.FieldWidth / 2 - padding;
+        float topBorder = _settings.FieldHeight / 2 - padding;
+        float bottomBorder = -(_settings.FieldHeight / 2 - padding);
 
 
         Entities

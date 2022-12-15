@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
@@ -15,7 +17,7 @@ public partial class InputSpawnSystem : SystemBase
     private Entity m_ProjectilePrefab;
     private float m_NextTime = 0;
     private float m_PerSecond;
-    private EntityQuery m_GameSettingsQuery; 
+    private EntityQuery m_GameSettingsQuery;
     
 
     protected override void OnCreate()
@@ -24,7 +26,7 @@ public partial class InputSpawnSystem : SystemBase
         m_BeginSimECB = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
         m_GameSettingsQuery = GetEntityQuery(ComponentType.ReadWrite<GameSettingsComponent>()); 
     }
-    
+
     protected override void OnUpdate()
     {
         var gameSettings = GetSingleton<GameSettingsComponent>();
@@ -66,17 +68,18 @@ public partial class InputSpawnSystem : SystemBase
 
         Entities
             .WithAll<PlayerTag>()
-            .ForEach((Entity entity, int entityInQueryIndex,ref TransformComponent transformComponent,in Translation translation, in ProjectileSpawnComponent projectileSpawn) =>
+            .ForEach((Entity entity, int entityInQueryIndex,ref TransformComponent transformComponent,in Translation translation, in ProjectileSpawnComponent spawner) =>
             {
+                
                 if (shoot != 1 || !canShoot)
                 {
                     return; 
                 }
 
                 var projectileEntity = commandBuffer.Instantiate(entityInQueryIndex, projectilePrefab);
-                var spawnPosition = new Translation { Value = translation.Value + projectileSpawn.SpawnPosition }; 
+                var spawnPosition = new Translation { Value = translation.Value + spawner.SpawnPosition}; 
                 commandBuffer.SetComponent(entityInQueryIndex, projectileEntity,spawnPosition);
-                
+               
                 
             }).ScheduleParallel();
 

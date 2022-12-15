@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1020489569764666520}
   - component: {fileID: 5882694939557815029}
   - component: {fileID: 5341297055743594529}
+  - component: {fileID: 7709754660313210948}
   m_Layer: 0
   m_Name: GunPosLt
   m_TagString: Untagged
@@ -58,6 +59,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &7709754660313210948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7232046799220515803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69752992f76be18459ac1f90ca577b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPosition:
+    x: 0
+    y: 0
+    z: 0
 --- !u!1 &7589712495141874804
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,8 +87,8 @@ GameObject:
   - component: {fileID: 7589712495141874805}
   - component: {fileID: 7589712495141874807}
   - component: {fileID: 7589712495141874792}
-  - component: {fileID: 3376150242967579625}
-  - component: {fileID: 52661612785049416}
+  - component: {fileID: 8526838286149634243}
+  - component: {fileID: 6040633149529056731}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -179,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9301aa37eecf0a49b5437c4c6dbb9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3376150242967579625
+--- !u!114 &8526838286149634243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,11 +205,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7589712495141874804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce4ffdfe45275c4dbcdf00bc14b501a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c21e02f683eb4d45b365a90ae7e994b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileSpawner: {fileID: 7232046799220515803}
---- !u!114 &52661612785049416
+--- !u!114 &6040633149529056731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition:
-    x: -1
-    y: 0.4
+    x: 0
+    y: 0
     z: 0
 --- !u!1 &8120441190678567967
 GameObject:
@@ -219,6 +235,7 @@ GameObject:
   - component: {fileID: 6920214906744573812}
   - component: {fileID: 703550554190827203}
   - component: {fileID: 2619836612865795180}
+  - component: {fileID: 3722929949169096215}
   m_Layer: 0
   m_Name: GunPosRt
   m_TagString: Untagged
@@ -266,3 +283,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &3722929949169096215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120441190678567967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69752992f76be18459ac1f90ca577b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPosition:
+    x: 0
+    y: 0
+    z: 0

@@ -14,16 +14,19 @@ public struct GameSettingsComponent : IComponentData
 
     [Header("Player Properties")]
     public float PlayerSpeed;
+    public int PlayerHealth; 
 
     [Header("Asteroids Properties")] 
     public int AsteroidDensity;
     public float AsteroidSpawnTimer; 
     public int AsteroidSpeed;
     public int AsteroidRotation;
+    public int AsteroidHealth; 
 
     [Header("Enemy Properties")] 
     public int EnemySpawnDensity; 
     public int EnemySpeed;
+    public int EnemyHealth;
 
     [Header("Projectile Properties")] 
     public int ProjectileSpeed;
