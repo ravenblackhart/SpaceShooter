@@ -12,11 +12,9 @@ public struct GameSettingsComponent : IComponentData
     public float FieldWidth;
     public float FieldHeight; 
 
-    [Header("Player Properties")] 
-    public float PlayerForce;
+    [Header("Player Properties")]
     public float PlayerSpeed;
-    public float PlayerDirection;
-    
+
     [Header("Asteroids Properties")] 
     public int AsteroidDensity;
     public float AsteroidSpawnTimer; 
@@ -26,6 +24,10 @@ public struct GameSettingsComponent : IComponentData
     [Header("Enemy Properties")] 
     public int EnemySpawnDensity; 
     public int EnemySpeed;
-    
+
+    [Header("Projectile Properties")] 
+    public int ProjectileSpeed;
+    public float ProjectilesPerSecond;
+
 
 }

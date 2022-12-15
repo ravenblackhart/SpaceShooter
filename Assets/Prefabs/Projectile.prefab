@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7307889880518482044}
   - component: {fileID: 3470383522642731619}
   - component: {fileID: 9087471555990532796}
+  - component: {fileID: 7181042174476861740}
   - component: {fileID: 7755231371067016442}
+  - component: {fileID: 8910330357721040806}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -98,6 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5697054b737fc44ab47fdb5f5895f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7181042174476861740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185327512526475985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19977c74c4561c48bede6f8eb461b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  age: 0
+  maxAge: 3
 --- !u!114 &7755231371067016442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +126,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272d45f14978c7c4a89af849be3e5afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  Speed: 8
   Direction:
     x: 0
-    y: 0
+    y: 1
   RotationSpeed: 0
   SwitchDirectionX: 0
   SwitchDirectionY: 0
+--- !u!114 &8910330357721040806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185327512526475985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7d7495833204790ba1d3a8755397f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConversionMode: 0

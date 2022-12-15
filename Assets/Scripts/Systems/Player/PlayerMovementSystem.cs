@@ -31,9 +31,10 @@ public partial class PlayerMovementSystem : SystemBase
 
         Entities
             .WithAll<PlayerTag>()
-            .ForEach((Entity entity, ref Translation translation, ref Rotation rotation, in TransformComponent transformComponent) =>
+            .ForEach((Entity entity, ref Translation translation, ref Rotation rotation, ref TransformComponent transformComponent) =>
             {
                 var translate = transformComponent.Direction;
+                transformComponent.Speed = gameSettings.PlayerSpeed; 
 
                 
                 

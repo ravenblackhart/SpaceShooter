@@ -492,6 +492,8 @@ MonoBehaviour:
   AsteroidRotation: 5
   EnemySpawnDensity: 5
   EnemySpeed: 3
+  ProjectileSpeed: 8
+  ProjectilesPerSecond: 10
 --- !u!4 &509486264
 Transform:
   m_ObjectHideFlags: 0

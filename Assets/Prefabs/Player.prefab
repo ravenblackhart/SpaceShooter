@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020489569764666520}
   - component: {fileID: 5882694939557815029}
+  - component: {fileID: 5341297055743594529}
   m_Layer: 0
   m_Name: GunPosLt
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7232046799220515803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 0.52, z: -1.8979603}
+  m_LocalPosition: {x: -1.003, y: 0.406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,6 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caf9f04376d07a41b890d3312449138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5341297055743594529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7232046799220515803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7d7495833204790ba1d3a8755397f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConversionMode: 0
 --- !u!1 &7589712495141874804
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +70,8 @@ GameObject:
   - component: {fileID: 7589712495141874805}
   - component: {fileID: 7589712495141874807}
   - component: {fileID: 7589712495141874792}
+  - component: {fileID: 3376150242967579625}
+  - component: {fileID: 52661612785049416}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -163,6 +179,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9301aa37eecf0a49b5437c4c6dbb9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3376150242967579625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589712495141874804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce4ffdfe45275c4dbcdf00bc14b501a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileSpawner: {fileID: 7232046799220515803}
+--- !u!114 &52661612785049416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589712495141874804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69752992f76be18459ac1f90ca577b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPosition:
+    x: -1
+    y: 0.4
+    z: 0
 --- !u!1 &8120441190678567967
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6920214906744573812}
   - component: {fileID: 703550554190827203}
+  - component: {fileID: 2619836612865795180}
   m_Layer: 0
   m_Name: GunPosRt
   m_TagString: Untagged
@@ -188,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8120441190678567967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 0.52, z: -1.8979603}
+  m_LocalPosition: {x: 0.999, y: 0.402, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -207,3 +253,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caf9f04376d07a41b890d3312449138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2619836612865795180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120441190678567967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7d7495833204790ba1d3a8755397f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConversionMode: 0
