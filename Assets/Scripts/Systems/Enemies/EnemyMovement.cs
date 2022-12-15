@@ -64,11 +64,13 @@ public partial class EnemyMovement : SystemBase
                 
                 
                 if (translation.Value.y >= topBorder && transformComponent.SwitchDirectionY) transformComponent.SwitchDirectionY = false; 
-                else if (translation.Value.y <= bottomBorder && !transformComponent.SwitchDirectionY) transformComponent.SwitchDirectionY = true; 
+                else if (translation.Value.y <= bottomBorder && !transformComponent.SwitchDirectionY) transformComponent.SwitchDirectionY = true;
                 
 
             }).ScheduleParallel();
     }
+    
+    
 }
 
 
