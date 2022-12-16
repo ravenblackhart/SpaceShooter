@@ -31,8 +31,8 @@ A number of systems were created, each handling only 1 aspect of the behaviour o
 
 ### Task List 
 Additional aspects to be explored - 
-[] Collision & Damage System 
-[] UI vs DOTS
+- [] Collision & Damage System 
+- [] UI vs DOTS
 
 
 
