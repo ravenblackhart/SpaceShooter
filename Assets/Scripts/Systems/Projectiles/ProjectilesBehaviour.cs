@@ -1,14 +1,12 @@
-using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Jobs;
-using Unity.Mathematics;
 using Unity.Transforms;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public partial class ProjectilesBehaviour : SystemBase
 {
     private BeginSimulationEntityCommandBufferSystem m_BeginSimECB;
-    
+
 
     protected override void OnCreate()
     {
@@ -20,18 +18,24 @@ public partial class ProjectilesBehaviour : SystemBase
     protected override void OnUpdate()
     {
         var commandBuffer = m_BeginSimECB.CreateCommandBuffer().AsParallelWriter();
-        float DeltaTime = Time.DeltaTime;
+        var DeltaTime = Time.DeltaTime;
+        var radius = 0.5f;
 
         Entities
             .WithAll<ProjectileTag>()
-            .ForEach((Entity entity, int entityInQueryIndex, ref Translation translation, ref ProjectileAgeComponent age, in TransformComponent transformComponent) =>
+            .ForEach((Entity entity, int entityInQueryIndex, ref Translation translation,
+                ref ProjectileAgeComponent age, in TransformComponent transformComponent) =>
             {
-                translation.Value.xy += transformComponent.Speed * transformComponent.Direction.xy * DeltaTime; 
-                age.age += DeltaTime; 
+                translation.Value.xy += transformComponent.Speed * transformComponent.Direction.xy * DeltaTime;
+                age.age += DeltaTime;
                 if (age.age > age.maxAge || age.hasHit) commandBuffer.DestroyEntity(entityInQueryIndex, entity);
 
             }).ScheduleParallel();
+        
+        
 
         m_BeginSimECB.AddJobHandleForProducer(Dependency);
     }
+
+    
 }

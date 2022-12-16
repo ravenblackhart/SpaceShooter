@@ -118,6 +118,7 @@ MonoBehaviour:
   RotationSpeed: 5
   SwitchDirectionX: 0
   SwitchDirectionY: 0
+  Health: 0
 --- !u!114 &1247011137069195291
 MonoBehaviour:
   m_ObjectHideFlags: 0

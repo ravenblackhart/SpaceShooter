@@ -1,7 +1,4 @@
-using System;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
 
 [GenerateAuthoringComponent]
 public struct ProjectileAgeComponent : IComponentData
@@ -10,11 +7,10 @@ public struct ProjectileAgeComponent : IComponentData
     {
         this.maxAge = maxAge;
         age = 0;
-        hasHit = false; 
+        hasHit = false;
     }
 
     public float age;
     public float maxAge;
     public bool hasHit;
-
 }
