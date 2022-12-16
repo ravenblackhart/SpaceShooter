@@ -6,7 +6,7 @@ Includes -
 - Simple Movements (Enemies, Asteroids, & Player) 
 - Shooting 
 - Waves of Enemies & Obstacles 
-- Basic Masking Shader [^1]
+- Basic Masking Shader[^1]
 
 ### Components 
 - Tags (Asteroid, Player, Enemy, Projectile) 
@@ -34,4 +34,6 @@ Additional aspects to be explored -
 [] Collision & Damage System 
 [] UI vs DOTS
 
-[^1] : Shader created to ensure Entities spawning in game is not visible outside of white bounds box.
+
+
+[^1]: Shader created to ensure Entities spawning in game is not visible outside of white bounds box.
