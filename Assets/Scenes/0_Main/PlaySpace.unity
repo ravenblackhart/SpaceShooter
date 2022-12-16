@@ -503,11 +503,11 @@ MonoBehaviour:
   _asteroidSpeed: 2
   _asteroidRotation: 5
   _asteroidHealth: 10
-  _asteroidSpawnRate: 3
+  _asteroidSpawnRate: 2
   _asteroidDensity: 6
   _asteroidSpawnTimer: 5
   _enemySpeed: 3
-  _enemyHealth: 5
+  _enemyHealth: 3
   _enemySpawnRate: 3
   _enemyDensity: 8
   _enemySpawnTimer: 2.5
