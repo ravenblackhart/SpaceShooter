@@ -9,7 +9,7 @@ Includes -
 - Basic Masking Shader[^1]
 
 ### Components 
-- Tags (Asteroid, Player, Enemy, Projectile) 
+- Tags (Asteroid, Player, Enemy, Projectile)[^2] 
 - General Transform Component (See Below) 
 - Game Settings Component + Game Settings Authoring Script 
 - Prefabs Collection Component
@@ -33,7 +33,9 @@ A number of systems were created, each handling only 1 aspect of the behaviour o
 Additional aspects to be explored - 
 - [ ] Collision & Damage System 
 - [ ] UI vs DOTS
-
+- [ ] PickUps (Buffs & Debuffs) 
+- [ ] Spawn Projectiles from 2 spawners (refer to position of Guns on Sprite) 
 
 
 [^1]: Shader created to ensure Entities spawning in game is not visible outside of white bounds box.
+[^2]: There is also a GunTag component that is currently not in use in this version (0.10) 
