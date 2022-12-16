@@ -461,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509486264}
-  - component: {fileID: 509486263}
+  - component: {fileID: 509486265}
   m_Layer: 0
   m_Name: GameSettings
   m_TagString: Untagged
@@ -469,32 +469,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &509486263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509486262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1e9bbd17b5c1c47a4d963d4fc0caaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FieldWidth: 34
-  FieldHeight: 24
-  PlayerSpeed: 5
-  PlayerHealth: 20
-  AsteroidDensity: 3
-  AsteroidSpawnTimer: 0
-  AsteroidSpeed: 1
-  AsteroidRotation: 5
-  AsteroidHealth: 10
-  EnemySpawnDensity: 5
-  EnemySpeed: 3
-  EnemyHealth: 3
-  ProjectileSpeed: 8
-  ProjectilesPerSecond: 5
 --- !u!4 &509486264
 Transform:
   m_ObjectHideFlags: 0
@@ -510,6 +484,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &509486265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509486262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca43ae49d8551294f804da6cd81abf9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldWidth: 0
+  FieldHeight: 0
+  PlayerSpeed: 0
+  PlayerHealth: 0
+  AsteroidDensity: 0
+  AsteroidSpawnTimer: 0
+  AsteroidSpeed: 0
+  AsteroidRotation: 0
+  AsteroidHealth: 0
+  EnemySpeed: 0
+  EnemyHealth: 0
+  ProjectileSpeed: 0
+  ProjectilesPerSecond: 0
 --- !u!1 &1819552450
 GameObject:
   m_ObjectHideFlags: 0
