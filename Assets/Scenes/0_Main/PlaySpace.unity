@@ -496,19 +496,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca43ae49d8551294f804da6cd81abf9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FieldWidth: 0
-  FieldHeight: 0
-  PlayerSpeed: 0
-  PlayerHealth: 0
-  AsteroidDensity: 0
-  AsteroidSpawnTimer: 0
-  AsteroidSpeed: 0
-  AsteroidRotation: 0
-  AsteroidHealth: 0
-  EnemySpeed: 0
-  EnemyHealth: 0
-  ProjectileSpeed: 0
-  ProjectilesPerSecond: 0
+  _fieldWidth: 34
+  _fieldHeight: 24
+  _playerSpeed: 5
+  _playerHealth: 20
+  _asteroidSpeed: 2
+  _asteroidRotation: 5
+  _asteroidHealth: 10
+  _asteroidSpawnRate: 3
+  _asteroidDensity: 6
+  _asteroidSpawnTimer: 5
+  _enemySpeed: 3
+  _enemyHealth: 5
+  _enemySpawnRate: 3
+  _enemyDensity: 8
+  _enemySpawnTimer: 2.5
+  _projectileSpeed: 8
+  _projectilesPerSecond: 10
 --- !u!1 &1819552450
 GameObject:
   m_ObjectHideFlags: 0

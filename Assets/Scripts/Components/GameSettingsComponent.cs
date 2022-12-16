@@ -5,22 +5,27 @@ using UnityEditor;
 [GenerateAuthoringComponent]
 public struct GameSettingsComponent : IComponentData
 {
-    [Header("Field Boundaries")] public float FieldWidth;
+    public float FieldWidth;
     public float FieldHeight;
 
-    [Header("Player Properties")] public float PlayerSpeed;
+    public float PlayerSpeed;
     public int PlayerHealth;
-
-    [Header("Asteroids Properties")] public int AsteroidDensity;
-    public float AsteroidSpawnTimer;
+    
     public int AsteroidSpeed;
     public int AsteroidRotation;
     public int AsteroidHealth;
-
-    [Header("Enemy Properties")] public int EnemySpawnDensity;
+    public int AsteroidDensity;
+    public int AsteroidSpawnRate; 
+    public float AsteroidSpawnTimer;
+    public float ASpawnSetting; 
+    
     public int EnemySpeed;
     public int EnemyHealth;
+    public int EnemySpawnRate; 
+    public int EnemyDensity;
+    public float EnemySpawnTimer; 
+    public float ESpawnSetting;
 
-    [Header("Projectile Properties")] public int ProjectileSpeed;
+    public int ProjectileSpeed;
     public float ProjectilesPerSecond;
 }

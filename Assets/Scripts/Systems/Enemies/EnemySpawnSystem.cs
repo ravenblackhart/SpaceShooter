@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -19,6 +20,7 @@ public partial class EnemySpawnSystem : SystemBase
         RequireForUpdate(m_GameSettingsQuery);
     }
 
+    [BurstCompile]
     protected override void OnUpdate()
     {
         if (m_EnemyPrefab == Entity.Null)
@@ -26,37 +28,48 @@ public partial class EnemySpawnSystem : SystemBase
             m_EnemyPrefab = GetSingleton<PrefabsAuthoringComponent>().EnemyPrefab;
             return;
         }
-
-        var settings = GetSingleton<GameSettingsComponent>();
-        var commandBuffer = m_BeginSimECB.CreateCommandBuffer();
+        
+        var commandBuffer = m_BeginSimECB.CreateCommandBuffer().AsParallelWriter();
         var count = m_EnemyQuery.CalculateChunkCountWithoutFiltering();
         var enemyPrefab = m_EnemyPrefab;
         var rand = new Random((uint)Stopwatch.GetTimestamp());
+        float DeltaTime = Time.DeltaTime;
 
 
-        Job
-            .WithCode(() =>
+        Entities
+            .ForEach((int entityInQueryIndex, ref GameSettingsComponent settings) =>
             {
-                for (var i = count; i < settings.EnemySpawnDensity; i++)
+                settings.EnemySpawnTimer -= DeltaTime;
+                if (settings.EnemySpawnTimer <= 0)
                 {
-                    var padding = 0.5f;
-                    var xPosition = rand.NextFloat(-1f * (settings.FieldWidth / 2 - padding),
-                        settings.FieldWidth / 2 - padding);
-                    var yPosition = settings.FieldHeight / 2 - padding;
-
-                    var pos = new Translation { Value = new float3(xPosition, yPosition, 0f) };
-                    var e = commandBuffer.Instantiate(enemyPrefab);
-
-                    commandBuffer.SetComponent(e, pos);
-
-                    var transform = new TransformComponent
+                    if (count < settings.EnemyDensity)
                     {
-                        Speed = settings.EnemySpeed, Direction = new float2(1f, -0.25f), Health = settings.EnemyHealth
-                    };
-                    commandBuffer.SetComponent(e, transform);
-                }
-            }).Schedule();
+                        for (var i = 0; i <= settings.EnemySpawnRate; i++)
+                        {
+                            var padding = 0.5f;
+                            var xPosition = rand.NextFloat(-1f * (settings.FieldWidth / 2 - padding),
+                                settings.FieldWidth / 2 - padding);
+                            var yPosition = settings.FieldHeight / 2 - padding;
 
+                            var pos = new Translation { Value = new float3(xPosition, yPosition, 0f) };
+                            var e = commandBuffer.Instantiate(entityInQueryIndex, enemyPrefab);
+
+                            commandBuffer.SetComponent(entityInQueryIndex, e, pos);
+
+                            var transform = new TransformComponent { 
+                                Speed = settings.EnemySpeed, 
+                                Direction = new float2(1f, -0.25f), 
+                                Health = settings.EnemyHealth
+                            };
+                            commandBuffer.SetComponent(entityInQueryIndex, e, transform);
+                        }
+
+                    }
+                    
+                    settings.EnemySpawnTimer = settings.ESpawnSetting; 
+                }
+                
+            }).ScheduleParallel();
         m_BeginSimECB.AddJobHandleForProducer(Dependency);
     }
 }
